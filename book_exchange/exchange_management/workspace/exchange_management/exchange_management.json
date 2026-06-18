@@ -1,0 +1,64 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"section_1\",\"type\":\"header\",\"data\":{\"text\":\"Exchange Management\",\"col\":12}},{\"id\":\"request_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Book Exchange Request\",\"col\":3}},{\"id\":\"transaction_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Exchange Transaction\",\"col\":3}}]",
+ "creation": "2026-01-15 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "refresh",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Exchange Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Book Exchange Request",
+   "link_count": 0,
+   "link_to": "Book Exchange Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Exchange Transaction",
+   "link_count": 0,
+   "link_to": "Exchange Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Exchange Management",
+ "name": "Exchange Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Book Exchange Request",
+   "link_to": "Book Exchange Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Exchange Transaction",
+   "link_to": "Exchange Transaction",
+   "type": "DocType"
+  }
+ ],
+ "title": "Exchange Management"
+}

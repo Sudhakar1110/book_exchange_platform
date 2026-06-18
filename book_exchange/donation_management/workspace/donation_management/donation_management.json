@@ -1,0 +1,47 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"section_1\",\"type\":\"header\",\"data\":{\"text\":\"Donation Management\",\"col\":12}},{\"id\":\"donation_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Book Donation\",\"col\":3}}]",
+ "creation": "2026-01-15 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "gift",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Donation Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Book Donation",
+   "link_count": 0,
+   "link_to": "Book Donation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Donation Management",
+ "name": "Donation Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Book Donation",
+   "link_to": "Book Donation",
+   "type": "DocType"
+  }
+ ],
+ "title": "Donation Management"
+}

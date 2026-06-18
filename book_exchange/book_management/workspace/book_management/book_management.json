@@ -1,0 +1,81 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"section_1\",\"type\":\"header\",\"data\":{\"text\":\"Book Management\",\"col\":12}},{\"id\":\"book_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Book\",\"col\":3}},{\"id\":\"book_category_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Book Category\",\"col\":3}},{\"id\":\"author_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Author\",\"col\":3}}]",
+ "creation": "2026-01-15 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "book",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Book Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Book",
+   "link_count": 0,
+   "link_to": "Book",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Book Category",
+   "link_count": 0,
+   "link_to": "Book Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Author",
+   "link_count": 0,
+   "link_to": "Author",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Book Management",
+ "name": "Book Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Book",
+   "link_to": "Book",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Book Category",
+   "link_to": "Book Category",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "Author",
+   "link_to": "Author",
+   "type": "DocType"
+  }
+ ],
+ "title": "Book Management"
+}

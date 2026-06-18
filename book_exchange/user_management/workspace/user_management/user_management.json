@@ -1,0 +1,47 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"section_1\",\"type\":\"header\",\"data\":{\"text\":\"User Management\",\"col\":12}},{\"id\":\"member_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Member Profile\",\"col\":3}}]",
+ "creation": "2026-01-15 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "User Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Member Profile",
+   "link_count": 0,
+   "link_to": "Member Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-15 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "User Management",
+ "name": "User Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Member Profile",
+   "link_to": "Member Profile",
+   "type": "DocType"
+  }
+ ],
+ "title": "User Management"
+}
