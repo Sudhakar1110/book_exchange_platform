@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donate Books - Book Exchange Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/book_exchange/css/book_exchange.css">
+</head>
+<body>
+    <nav class="navbar-book-exchange">
+        <div class="container">
+            <a href="/book-exchange">Home</a>
+            <a href="/book-exchange/browse">Browse Books</a>
+            <a href="/book-exchange/exchange">Exchange Books</a>
+            <a href="/book-exchange/donate">Donate Books</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="book-exchange-header">
+            <h1>Donate Books</h1>
+            <p>Give the gift of reading to someone in need</p>
+        </div>
+        
+        <div class="exchange-form">
+            <h3>Why Donate?</h3>
+            <ul>
+                <li>Help spread the joy of reading</li>
+                <li>Give your books a new life</li>
+                <li>Support the community</li>
+                <li>Clear space on your shelves</li>
+            </ul>
+            
+            <h3>How to Donate</h3>
+            <ol>
+                <li>Create a donation request for your book</li>
+                <li>Our team will review and approve your donation</li>
+                <li>Drop off or ship the book to our collection center</li>
+                <li>Your book will be given to someone who needs it</li>
+            </ol>
+            
+            <div class="text-center mt-4">
+                <a href="/app/Form/Book%20Donation/NewBookDonation1" class="btn btn-info btn-lg">Start Donation</a>
+            </div>
+        </div>
+        
+        {% if recent_donations %}
+        <div class="mt-5">
+            <h3>Recent Donations</h3>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Book</th>
+                        <th>Donor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for donation in recent_donations %}
+                    <tr>
+                        <td>{{ donation.donation_date }}</td>
+                        <td>{{ donation.book_title }}</td>
+                        <td>{{ donation.donor_name }}</td>
+                        <td><span class="status-badge {{ donation.status.lower() }}">{{ donation.status }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+    
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>

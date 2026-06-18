@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exchange Books - Book Exchange Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/book_exchange/css/book_exchange.css">
+</head>
+<body>
+    <nav class="navbar-book-exchange">
+        <div class="container">
+            <a href="/book-exchange">Home</a>
+            <a href="/book-exchange/browse">Browse Books</a>
+            <a href="/book-exchange/exchange">Exchange Books</a>
+            <a href="/book-exchange/donate">Donate Books</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="book-exchange-header">
+            <h1>Exchange Books</h1>
+            <p>Trade your books with other members in the community</p>
+        </div>
+        
+        <div class="exchange-form">
+            <h3>How it Works</h3>
+            <ol>
+                <li>Select a book you want from the available collection</li>
+                <li>Offer one of your own books in exchange</li>
+                <li>Submit your exchange request</li>
+                <li>Wait for the book owner to approve</li>
+                <li>Coordinate the exchange with the other member</li>
+            </ol>
+            
+            <div class="text-center mt-4">
+                <a href="/book-exchange/browse" class="btn btn-primary btn-lg">Browse Available Books</a>
+                <br><br>
+                <a href="/app/Form/Book%20Exchange%20Request/NewBookExchangeRequest1" class="btn btn-success btn-lg">Create Exchange Request</a>
+            </div>
+        </div>
+        
+        {% if recent_exchanges %}
+        <div class="mt-5">
+            <h3>Recent Exchanges</h3>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Offered Book</th>
+                        <th>Requested Book</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for exchange in recent_exchanges %}
+                    <tr>
+                        <td>{{ exchange.request_date }}</td>
+                        <td>{{ exchange.offered_book_title }}</td>
+                        <td>{{ exchange.requested_book_title }}</td>
+                        <td><span class="status-badge {{ exchange.status.lower() }}">{{ exchange.status }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+    
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Exchange Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/book_exchange/css/book_exchange.css">
+</head>
+<body>
+    <nav class="navbar-book-exchange">
+        <div class="container">
+            <a href="/book-exchange">Home</a>
+            <a href="/book-exchange/browse">Browse Books</a>
+            <a href="/book-exchange/exchange">Exchange Books</a>
+            <a href="/book-exchange/donate">Donate Books</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="book-exchange-header">
+            <h1>Welcome to Book Exchange Platform</h1>
+            <p>Share your love for books by exchanging and donating with others in your community</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="book-card">
+                    <h3>Browse Books</h3>
+                    <p>Explore our collection of available books</p>
+                    <a href="/book-exchange/browse" class="btn btn-primary">Browse Now</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="book-card">
+                    <h3>Exchange Books</h3>
+                    <p>Trade your books with other members</p>
+                    <a href="/book-exchange/exchange" class="btn btn-success">Start Exchange</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="book-card">
+                    <h3>Donate Books</h3>
+                    <p>Give your books a new home</p>
+                    <a href="/book-exchange/donate" class="btn btn-info">Donate Now</a>
+                </div>
+            </div>
+        </div>
+        
+        {% if books %}
+        <div class="mt-5">
+            <h2>Featured Books</h2>
+            <div class="row">
+                {% for book in books %}
+                <div class="col-md-3">
+                    <div class="book-card">
+                        <div class="book-category">{{ book.book_category }}</div>
+                        <h4 class="book-title">{{ book.book_title }}</h4>
+                        <p class="book-author">by {{ book.author }}</p>
+                        <span class="book-condition condition-{{ book.condition.lower().replace(' ', '-') }}">
+                            {{ book.condition }}
+                        </span>
+                        <span class="book-status status-{{ book.status.lower() }}">
+                            {{ book.status }}
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>

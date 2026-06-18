@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Books - Book Exchange Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/book_exchange/css/book_exchange.css">
+</head>
+<body>
+    <nav class="navbar-book-exchange">
+        <div class="container">
+            <a href="/book-exchange">Home</a>
+            <a href="/book-exchange/browse">Browse Books</a>
+            <a href="/book-exchange/exchange">Exchange Books</a>
+            <a href="/book-exchange/donate">Donate Books</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="book-exchange-header">
+            <h1>Browse Available Books</h1>
+            <p>Find your next great read from our community</p>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <form method="get" class="form-inline">
+                    <div class="form-group mr-2">
+                        <input type="text" name="search" class="form-control" placeholder="Search by title or author" value="{{ search or '' }}">
+                    </div>
+                    <div class="form-group mr-2">
+                        <select name="category" class="form-control">
+                            <option value="">All Categories</option>
+                            {% for cat in categories %}
+                            <option value="{{ cat.name }}" {% if category == cat.name %}selected{% endif %}>{{ cat.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group mr-2">
+                        <select name="condition" class="form-control">
+                            <option value="">All Conditions</option>
+                            <option value="New" {% if condition == 'New' %}selected{% endif %}>New</option>
+                            <option value="Like New" {% if condition == 'Like New' %}selected{% endif %}>Like New</option>
+                            <option value="Good" {% if condition == 'Good' %}selected{% endif %}>Good</option>
+                            <option value="Fair" {% if condition == 'Fair' %}selected{% endif %}>Fair</option>
+                            <option value="Poor" {% if condition == 'Poor' %}selected{% endif %}>Poor</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% if books %}
+                {% for book in books %}
+                <div class="col-md-3">
+                    <div class="book-card">
+                        {% if book.book_image %}
+                        <img src="{{ book.book_image }}" alt="{{ book.book_title }}" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
+                        {% endif %}
+                        <div class="book-category">{{ book.book_category }}</div>
+                        <h4 class="book-title">{{ book.book_title }}</h4>
+                        <p class="book-author">by {{ book.author }}</p>
+                        <p><small>ISBN: {{ book.isbn or 'N/A' }}</small></p>
+                        <span class="book-condition condition-{{ book.condition.lower().replace(' ', '-') }}">
+                            {{ book.condition }}
+                        </span>
+                        <br>
+                        <span class="book-status status-available">Available</span>
+                        <br><br>
+                        <a href="/book-exchange/book/{{ book.name }}" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-md-12 text-center">
+                    <p>No books found matching your criteria.</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        {% if total_pages > 1 %}
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <nav>
+                    <ul class="pagination">
+                        {% if page > 1 %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page - 1 }}&search={{ search or '' }}&category={{ category or '' }}&condition={{ condition or '' }}">Previous</a></li>
+                        {% endif %}
+                        {% for p in range(1, total_pages + 1) %}
+                        <li class="page-item {% if p == page %}active{% endif %}">
+                            <a class="page-link" href="?page={{ p }}&search={{ search or '' }}&category={{ category or '' }}&condition={{ condition or '' }}">{{ p }}</a>
+                        </li>
+                        {% endfor %}
+                        {% if page < total_pages %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page + 1 }}&search={{ search or '' }}&category={{ category or '' }}&condition={{ condition or '' }}">Next</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>

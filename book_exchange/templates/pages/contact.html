@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Book Exchange Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/book_exchange/css/book_exchange.css">
+</head>
+<body>
+    <nav class="navbar-book-exchange">
+        <div class="container">
+            <a href="/book-exchange">Home</a>
+            <a href="/book-exchange/browse">Browse Books</a>
+            <a href="/book-exchange/exchange">Exchange Books</a>
+            <a href="/book-exchange/donate">Donate Books</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="book-exchange-header">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for any questions or support</p>
+        </div>
+        
+        <div class="exchange-form">
+            <h3>Get in Touch</h3>
+            <p>Have questions about book exchanges or donations? We're here to help!</p>
+            
+            <div class="mt-4">
+                <p><strong>Email:</strong> info@bookexchange.com</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Address:</strong> 123 Library Street, Booktown, BT 12345</p>
+                <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+            </div>
+            
+            <h3 class="mt-4">Submit an Inquiry</h3>
+            <form action="/api/book_exchange/contact" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>
