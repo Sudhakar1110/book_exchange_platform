@@ -1,118 +1,116 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:DON-{YYYY}-{#####}",
+ "autoname": "format:BOOK-{#####}",
  "creation": "2026-01-15 10:00:00.000000",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "donation_details_section",
-  "donor",
-  "book",
-  "column_break_3",
-  "donation_date",
+  "book_details_section",
+  "book_title",
+  "author",
+  "book_category",
+  "isbn",
+  "column_break_5",
+  "condition",
   "status",
-  "workflow_state",
-  "notes_section",
-  "notes",
-  "approval_section",
-  "approved_by",
-  "approval_date",
-  "received_date"
+  "owner_member",
+  "description_section",
+  "description",
+  "image_section",
+  "book_image"
  ],
  "fields": [
   {
-   "fieldname": "donation_details_section",
+   "fieldname": "book_details_section",
    "fieldtype": "Section Break",
-   "label": "Donation Details"
+   "label": "Book Details"
   },
   {
-   "fieldname": "donor",
-   "fieldtype": "Link",
+   "fieldname": "book_title",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Donor",
-   "options": "Member Profile",
+   "label": "Book Title",
    "reqd": 1
   },
   {
-   "fieldname": "book",
+   "fieldname": "author",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Book",
-   "options": "Book",
+   "label": "Author",
+   "options": "Author",
    "reqd": 1
   },
   {
-   "fieldname": "column_break_3",
+   "fieldname": "book_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Book Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "label": "ISBN"
+  },
+  {
+   "fieldname": "column_break_5",
    "fieldtype": "Column Break"
   },
   {
-   "default": "Today",
-   "fieldname": "donation_date",
-   "fieldtype": "Date",
+   "fieldname": "condition",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Donation Date",
+   "label": "Condition",
+   "options": "\nNew\nLike New\nGood\nFair\nPoor",
    "reqd": 1
   },
   {
-   "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Draft\nSubmitted\nApproved\nReceived",
+   "options": "Available\nExchanged\nDonated\nReserved",
+   "reqd": 1,
+   "default": "Available"
+  },
+  {
+   "fieldname": "owner_member",
+   "fieldtype": "Link",
+   "label": "Owner",
+   "options": "Member Profile",
    "reqd": 1
   },
   {
-   "fieldname": "workflow_state",
-   "fieldtype": "Link",
-   "label": "Workflow State",
-   "options": "Workflow State",
-   "read_only": 1
-  },
-  {
-   "fieldname": "notes_section",
+   "fieldname": "description_section",
    "fieldtype": "Section Break",
-   "label": "Notes"
+   "label": "Description"
   },
   {
-   "fieldname": "notes",
+   "fieldname": "description",
    "fieldtype": "Text Editor",
-   "label": "Donation Notes"
+   "label": "Description"
   },
   {
-   "fieldname": "approval_section",
+   "fieldname": "image_section",
    "fieldtype": "Section Break",
-   "label": "Approval"
+   "label": "Image"
   },
   {
-   "fieldname": "approved_by",
-   "fieldtype": "Link",
-   "label": "Approved By",
-   "options": "User",
-   "read_only": 1
-  },
-  {
-   "fieldname": "approval_date",
-   "fieldtype": "Date",
-   "label": "Approval Date",
-   "read_only": 1
-  },
-  {
-   "fieldname": "received_date",
-   "fieldtype": "Date",
-   "label": "Received Date",
-   "read_only": 1
+   "fieldname": "book_image",
+   "fieldtype": "Attach Image",
+   "label": "Book Image"
   }
  ],
- "is_submittable": 1,
+ "image_field": "book_image",
  "links": [],
  "modified": "2026-01-15 10:00:00.000000",
  "modified_by": "Administrator",
- "module": "Donation Management",
- "name": "Book Donation",
+ "module": "Book Exchange Platform",
+ "name": "Book",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -126,11 +124,9 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {
-   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -140,7 +136,6 @@
    "report": 1,
    "role": "Book Exchange Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   },
   {
@@ -152,12 +147,13 @@
    "report": 1,
    "role": "Member",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "book_title",
  "track_changes": 1
 }
